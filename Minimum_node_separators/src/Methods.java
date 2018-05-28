@@ -25,7 +25,7 @@ public class Methods {
 
     private static ELGraph<String, String> readGraph() throws IOException {
         ELGraph<String, String> graph = new ELGraph<>();
-        File file = new File("/home/usuario/Documentos/workspace/minimal_separator_graph/Minimum_node_separators/src/graph");
+        File file = new File("src/graph");
         FileReader fr = null;
         try {
             fr = new FileReader(file);
