@@ -121,7 +121,7 @@ public class ELGraph<V,E> implements Graph <V,E> {
         return Collections.unmodifiableCollection(edgeList);
     }
 
-    public Iterable<? extends Edge<E>> incidentEdges(Vertex<V> v) {
+    public Iterable<? extends Edge<E>> incidentEdges(Vertex <V> v) {
         HashSet <Edge <E> > incidentEdges = new HashSet<>();
         for (ELEdge <E> e : edgeList){
             if (e.getStartVertex().equals(v))
