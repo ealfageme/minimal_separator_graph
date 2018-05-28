@@ -112,6 +112,7 @@ public class ELGraph<V,E> implements Graph <V,E> {
 
     private final Set <ELVertex<V>> vertexList = new HashSet<>();
     private final Set <ELEdge<E>> edgeList = new HashSet<>();
+    private int size = 0;
     
     public Iterable <? extends Vertex<V> > vertices() {
         return Collections.unmodifiableCollection(vertexList);
@@ -178,6 +179,7 @@ public class ELGraph<V,E> implements Graph <V,E> {
     public Vertex <V> insertVertex(V value) {
         ELVertex<V> v = new ELVertex<>(value,this);
         vertexList.add(v);
+        this.size++;
         return v;
     }
 
@@ -195,6 +197,9 @@ public class ELGraph<V,E> implements Graph <V,E> {
         return e;
     }
 
+    public int getSize(){
+       return this.size;
+    }
     public V removeVertex(Vertex<V> vertex) {
         ELVertex<V> v = checkVertex(vertex);
         V aux = vertex.getValue();
@@ -211,7 +216,7 @@ public class ELGraph<V,E> implements Graph <V,E> {
         for (ELEdge<E> edge : removeEdgeList) {
             edgeList.remove(edge);
         }
-        
+        this.size--;
         return aux;        
     }
 
