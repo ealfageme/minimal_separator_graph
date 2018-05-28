@@ -1,12 +1,10 @@
-import java.awt.*;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.LinkedList;
 
-import java.util.Set;
+import java.io.*;
+import java.util.*;
+
 
 public class Methods {
-    public static int bfs(ELGraph graph, Vertex vertex){
+    private static int bfs(ELGraph graph, Vertex vertex){
         LinkedList queue = new LinkedList();
         queue.add(vertex);
         Set nodeExplored = new HashSet();
@@ -23,63 +21,65 @@ public class Methods {
             }
         }
         return nodeExplored.size();
-
-
-
     }
 
-    public static void main(String[] args) {
-        // Create graph
-        ELGraph graph = new ELGraph();
+    private static ELGraph<String, String> readGraph() throws IOException {
+        ELGraph<String, String> graph = new ELGraph<>();
+        File file = new File("/home/usuario/Documentos/workspace/minimal_separator_graph/Minimum_node_separators/src/graph");
+        FileReader fr = null;
+        try {
+            fr = new FileReader(file);
+        } catch (FileNotFoundException e1) {
+            e1.printStackTrace();
+        }
+        BufferedReader br = new BufferedReader(fr);
+        String line;
+        String nodes = br.readLine();
+        HashMap<String, Vertex<String>> maps = new HashMap<>();
+        String[] sequenceNodes = nodes.split(",");
+        for (String newNode:sequenceNodes){
+
+            Vertex<String> aux = graph.insertVertex(newNode);
+            maps.put(newNode,aux);
+        }
+        while((line=br.readLine())!=null) {
+            line = line.replace("[","");
+            line = line.replace("]","");
+            String[] edges= line.split(",");
+            try {
+                graph.insertEdge(maps.get(edges[0]), maps.get(edges[1]), "value");
+            }catch (RuntimeException e){
+                System.out.println("[Error] '" + edges[0] +"' or '" + edges[1]+"' isn't a vertex");
+                e.printStackTrace();
+            }
+        }
+        return graph;
+    }
+
+    private static Vertex getRandomVertex(Graph graph){
         ArrayList<Vertex> vertexList = new ArrayList<>();
-
-        Vertex a = graph.insertVertex("a");
-        vertexList.add(a);
-        Vertex b = graph.insertVertex("b");
-        vertexList.add(b);
-        Vertex c = graph.insertVertex("c");
-        vertexList.add(c);
-        Vertex d = graph.insertVertex("d");
-        vertexList.add(d);
-        Vertex e = graph.insertVertex("e");
-        vertexList.add(e);
-        Vertex f = graph.insertVertex("f");
-        vertexList.add(f);
-        graph.insertEdge(a,b,5);
-        graph.insertEdge(a,c,5);
-//        graph.insertEdge(a,d,5);
-//        graph.insertEdge(a,e,5);
-//        graph.insertEdge(a,f,3);
-        graph.insertEdge(b,c,2);
-//        graph.insertEdge(b,d,2);
-//        graph.insertEdge(b,e,2);
-//        graph.insertEdge(b,f,2);
-        graph.insertEdge(c,d,6);
-        graph.insertEdge(c,e,6);
-        graph.insertEdge(c,f,6);
-        graph.insertEdge(d,f,4);
-        graph.insertEdge(d,e,3);
-//        System.out.println(graph);
-//        System.out.println(bfs(graph, a));
-
-        // Obtain alpha
-        int alpha = 2;
+        for(Object e :graph.vertices()) vertexList.add((Vertex) e);
         int random = (int) (Math.random()*(vertexList.size()-1)-0);
-        Vertex startVertex = vertexList.get(random);
+        return vertexList.get(random);
+    }
+
+    public static void main(String[] args) throws IOException {
+
+
+        int alpha = 2;
+
+        ELGraph<String, String> graph = readGraph();
+
+        Vertex startVertex = getRandomVertex(graph);
         while (graph.getSize()== bfs(graph,startVertex)){
-            int newRandom = (int) (Math.random()*(vertexList.size()-1)-0);
-            Vertex deleted = vertexList.get(newRandom);
-            vertexList.remove(newRandom);
+
+            Vertex deleted = getRandomVertex(graph);
+            System.out.println("Vertex :"+ deleted +" deleted");
             graph.removeVertex(deleted);
-            System.out.println("Vertex :"+ deleted+" deleted");
-            random = (int) (Math.random()*(vertexList.size()-1)-0);
-            startVertex = vertexList.get(random);
+            startVertex = getRandomVertex(graph);
 
         }
         System.out.println(graph);
-        //          Iterator
-        //white     Delete Random Node
-        //          Check Iterator
-        // Show Solution
+
     }
 }

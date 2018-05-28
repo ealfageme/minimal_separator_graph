@@ -200,6 +200,7 @@ public class ELGraph<V,E> implements Graph <V,E> {
     public int getSize(){
        return this.size;
     }
+
     public V removeVertex(Vertex<V> vertex) {
         ELVertex<V> v = checkVertex(vertex);
         V aux = vertex.getValue();
