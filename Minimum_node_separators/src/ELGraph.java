@@ -183,6 +183,10 @@ public class ELGraph<V,E> implements Graph <V,E> {
         return v;
     }
 
+    public Set<ELVertex<V>> getVertexList() {
+        return vertexList;
+    }
+
     public Edge <E> insertEdge(Vertex<V> v1, Vertex<V> v2, E edgeValue) {
         if (!vertexList.contains(v1))
             throw new RuntimeException("The vertex v1 doesn't belong to this graph");
@@ -248,7 +252,7 @@ public class ELGraph<V,E> implements Graph <V,E> {
 
     @Override
     public String toString() {
-        String vertex = "Vertex"+"\n" + this.vertices() + "\n";
+        String vertex = "Vertex:"+"\n" + this.vertices() + "\n";
         String edges = "Edges:" +"\n" + this.edges() + "\n";
         String toString = vertex + edges;
         return toString;
