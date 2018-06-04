@@ -5,6 +5,7 @@ public class ELGraph<V,E> implements Graph <V,E> {
 	private class ELVertex <T> implements Vertex <T> {
 	    private T vertexValue;
 	    private final Graph<T,E> graph;
+	    private int edges;
 	    
 	    @Override
 	    public T getValue() {
@@ -18,7 +19,14 @@ public class ELGraph<V,E> implements Graph <V,E> {
 	    public ELVertex(T value, Graph<T,E> graph) {
 	        vertexValue = value;
 	        this.graph = graph;
+	        this.edges = 0;
 	    }
+	    public int getEdges(){
+	        return this.edges;
+        }
+        public void setEdges(int edges){
+	        this.edges = edges;
+        }
 
         public Graph<T,E> getGraph() {
 	        return graph;
@@ -84,8 +92,12 @@ public class ELGraph<V,E> implements Graph <V,E> {
 
 	    public ELEdge(T value,Vertex<V> startVertex, Vertex<V> endVertex, Graph<V,T> graph) {
 	        edgeValue = value;
-	        this.startVertex = startVertex;
-	        this.endVertex = endVertex;
+	        int startEdges = startVertex.getEdges();
+            startVertex.setEdges(1+startEdges);
+            this.startVertex = startVertex;
+            int endEdges = endVertex.getEdges();
+            endVertex.setEdges(endEdges+1);
+            this.endVertex = endVertex;
 	        this.graph = graph;
 	    }
 	    @Override
@@ -219,6 +231,8 @@ public class ELGraph<V,E> implements Graph <V,E> {
         }
         
         for (ELEdge<E> edge : removeEdgeList) {
+            edge.startVertex.setEdges(edge.startVertex.getEdges()-1);
+            edge.endVertex.setEdges(edge.endVertex.getEdges()-1);
             edgeList.remove(edge);
         }
         this.size--;
@@ -227,6 +241,8 @@ public class ELGraph<V,E> implements Graph <V,E> {
 
     public E removeEdge(Edge<E> edge) {
         ELEdge<E> e = checkEdge(edge);
+        e.startVertex.setEdges(e.startVertex.getEdges()-1);
+        e.endVertex.setEdges(e.endVertex.getEdges()-1);
         E aux = edge.getValue();
         edgeList.remove(e);
         return aux;
