@@ -1,9 +1,12 @@
 
+import jdk.nashorn.internal.runtime.ListAdapter;
+
 import java.io.*;
 import java.util.*;
 
 
 public class Methods {
+    // To calculate the number of nodes connected
     private static Set<Vertex> bfs(ELGraph graph, Vertex vertex){
         LinkedList queue = new LinkedList();
         queue.add(vertex);
@@ -23,40 +26,37 @@ public class Methods {
 //        System.out.println("bfs: " + nodeExplored.size());
         return nodeExplored;
     }
-    private static int bfs(ELGraph graph, Vertex start, Vertex end){
-        int longitude = 1000;
+    // Bfs, return the path more sorter beetween two nodes
+    private static int bfs(ELGraph graph, Vertex start, Vertex end) {
+        if (start.equals(end)) return 0;
+        int longitude = -1;
         LinkedList queue = new LinkedList();
         List<Vertex> list = new ArrayList<>();
+        Set nodeExplored = new HashSet();
         list.add(start);
         queue.add(list);
-        Set nodeExplored = new HashSet();
         nodeExplored.add(start);
-        System.out.println("entre");
-        while(!queue.isEmpty()) {
-            System.out.println("entre1");
+        while (!queue.isEmpty()) {
             List<Vertex> listAux = (List) queue.poll();
-            Vertex searched =  listAux.get(listAux.size() - 1);
-            HashSet <Edge> incidentEdges = (HashSet<Edge>) graph.incidentEdges(searched);
-            for (Edge edge : incidentEdges){
-                Vertex oposite = graph.opposite(searched,edge);
-                if (oposite.equals(end)){
-                    nodeExplored.add(oposite);
-                    listAux.add(oposite);
-                    longitude = listAux.size();
-                    System.out.println("list" + listAux);
-                    break;
-                    
-                }
-                if (!nodeExplored.contains(oposite)){
-                    nodeExplored.add(oposite);
-                    listAux.add(oposite);
-                    queue.add(listAux);
+            Vertex searched = listAux.get(listAux.size() - 1);
+            HashSet<Edge> incidentEdges = (HashSet<Edge>) graph.incidentEdges(searched);
+            for (Edge edge : incidentEdges) {
+                Vertex opposite = graph.opposite(searched, edge);
+                if (!nodeExplored.contains(opposite)) {
+                    if (opposite.equals(end)) {
+                        return listAux.size();
+                    } else {
+                        nodeExplored.add(opposite);
+                        ArrayList<Vertex> listToQueue = new ArrayList<>(listAux);
+                        listToQueue.add(opposite);
+                        queue.add(listToQueue);
+                    }
                 }
             }
         }
-
         return longitude;
     }
+
     private static ELGraph<String, String> readGraph(String filePath) throws IOException {
         ELGraph<String, String> graph = new ELGraph<>();
         File file = new File(filePath);
@@ -106,15 +106,27 @@ public class Methods {
         return vert;
     }
 
-//    private static Vertex getMoreCloseness(ELGraph graph){
-//
-//    }
+    private static Vertex getMoreCloseness(ELGraph graph){
+        Vertex more = getRandomVertex(graph);
+        Set<Vertex> allVertex = graph.getVertexList();
+        for (Vertex v: allVertex){
+            if (closeness(graph,v) > closeness(graph,more)){
+                more = v;
+            }
+        }
+        return more;
+    }
     private static double closeness(ELGraph graph, Vertex v){
         double value = 0;
+        int bfsValue =-1;
         Set<Vertex> allVertex = graph.getVertexList();
         for (Vertex s: allVertex){
             if (!v.equals(s))
-                value += bfs(graph, v, s);
+                bfsValue = bfs(graph, v, s);
+                if (bfsValue!=-1)
+                    value += bfsValue;
+                else
+                    value+= 1000;
         }
         return allVertex.size()/value;
 
@@ -152,19 +164,15 @@ public class Methods {
         double param = alpha * n;
 
         System.out.println("Param :" +param);
-//        while (!checkAlpha(graph, param)){
-////            Vertex deleted = getRandomVertex(graph);
+        while (!checkAlpha(graph, param)){
+//            Vertex deleted = getRandomVertex(graph);
 //            Vertex deleted = getMaxGrade(graph);
-//            System.out.println("Vertex: "+ deleted.getValue() +" deleted with "+ deleted.getEdges());
-//            graph.removeVertex(deleted);
-//            solution.insertVertexDeleted(deleted);
-//
-//        }
-        Vertex a = getRandomVertex(graph);
-        Vertex b = getRandomVertex(graph);
-        System.out.println("a " + a.getValue() + " b " + b.getValue());
-        System.out.println(bfs(graph,a,b));
-//        System.out.println(solution.toString());
+            Vertex deleted = getMoreCloseness(graph);
+            System.out.println("Vertex: "+ deleted.getValue() +" deleted with "+ deleted.getEdges()+" edges");
+            graph.removeVertex(deleted);
+            solution.insertVertexDeleted(deleted);
+
+        }
 
     }
 }
