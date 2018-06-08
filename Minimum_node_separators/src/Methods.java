@@ -1,6 +1,7 @@
 
 import jdk.nashorn.internal.runtime.ListAdapter;
 
+import java.beans.VetoableChangeListener;
 import java.io.*;
 import java.util.*;
 
@@ -56,7 +57,7 @@ public class Methods {
         list.clear();
         return list;
     }
-
+    
     private static ELGraph<String, String> readGraph(String filePath) throws IOException {
         ELGraph<String, String> graph = new ELGraph<>();
         File file = new File(filePath);
@@ -90,20 +91,6 @@ public class Methods {
         for(Object e :graph.vertices()) vertexList.add((Vertex) e);
         int random = (int) (Math.random()*(vertexList.size()-1)-0);
         return vertexList.get(random);
-    }
-
-    private static Vertex getMaxGrade(ELGraph graph){
-        int numEdges = 0;
-        Vertex vert = null;
-        Set<Vertex> allVertex = graph.getVertexList();
-        for (Vertex s : allVertex) {
-            if(s.getEdges() > numEdges){
-                vert = s;
-                numEdges = s.getEdges();
-            }
-        }
-
-        return vert;
     }
 
     private static double closeness(ELGraph graph, Vertex v){
@@ -144,29 +131,89 @@ public class Methods {
         return value/2;
     }
 
-    private static Vertex getMoreBetweeness(ELGraph graph){
-        Vertex more = getRandomVertex(graph);
+    private static Map<Vertex,Float> pageRank(ELGraph graph) {
+        int size = graph.getSize();
+        Map<Vertex, Float> maps = new HashMap<>();
         Set<Vertex> allVertex = graph.getVertexList();
-        for (Vertex v: allVertex){
-            System.out.println("vertex " + v.toString() + " | Betweeness: " + betweeness(graph,v));
-            if (betweeness(graph,v) > betweeness(graph,more)){
-                more = v;
-            }
+        Float[] values = new Float[size];
+        Float[] newValues = new Float[size];
+        Vertex[] vertices = allVertex.toArray(new Vertex[size]);
+        for (int i = 0; i < values.length; i++) {
+            values[i] = (float) 1 / size;
         }
-        return more;
+        for(int i = 0 ; i <2; i++) {
+            for (int j= 0; j<newValues.length;j++){
+                newValues[j] = 0f;
+            }
+            for (int j = 0; j < vertices.length; j++) {
+                Vertex v = vertices[j];
+                HashSet<Edge> incidentEdges = (HashSet<Edge>) graph.incidentEdges(v);
+                for (Edge edge : incidentEdges) {
+                    Vertex oposite = graph.opposite(v, edge);
+                    int edgesOp = ((HashSet<Edge>) graph.incidentEdges(oposite)).size();
+                    newValues[j] += values[getIndex(vertices,oposite)] / edgesOp;
+                }
+            }
+            System.arraycopy(newValues, 0, values, 0, newValues.length);
+        }
+        for(int i = 0 ; i<vertices.length;i++){
+            maps.put(vertices[i],values[i]);
+        }
+        return maps;
+
     }
 
-    private static Vertex getMoreCloseness(ELGraph graph){
-        Vertex more = getRandomVertex(graph);
-        Set<Vertex> allVertex = graph.getVertexList();
-        for (Vertex v: allVertex){
-            System.out.println("vertex " + v.toString() + " | Closeness: " + closeness(graph,v));
-            if (closeness(graph,v) > closeness(graph,more)){
-                more = v;
-            }
+    private static int getIndex(Vertex[] vs, Vertex op){
+        for (int i = 0; i < vs.length;i ++){
+            if (vs[i].equals(op))
+            return i;
         }
-        return more;
+        return -1;
     }
+
+    private static Vertex getMore(ELGraph graph, String type){
+        Vertex maxVertex = getRandomVertex(graph);
+        Set<Vertex> allVertex = graph.getVertexList();
+        switch (type){
+            case "closeness":
+                for (Vertex v: allVertex){
+                    System.out.println("vertex " + v.toString() +
+                            " | Closeness: " + closeness(graph,v));
+                    if (closeness(graph,v) > closeness(graph,maxVertex)){
+                        maxVertex = v;
+                    }
+                }
+                break;
+            case "betweeness":
+                for (Vertex v: allVertex){
+                    System.out.println("vertex " + v.toString() +
+                            " | Betweeness: " + betweeness(graph,v));
+                    if (betweeness(graph,v) > betweeness(graph,maxVertex)){
+                        maxVertex = v;
+                    }
+                }
+                break;
+            case "pageRank":
+                Map<Vertex,Float> pageRankMaps = pageRank(graph);
+                maxVertex=pageRankMaps
+                        .entrySet()
+                        .stream()
+                        .max(Map.Entry.comparingByValue())
+                        .get()
+                        .getKey();
+                break;
+            case "grade":
+                int numEdges = 0;
+                for (Vertex s : allVertex) {
+                    if(s.getEdges() > numEdges){
+                        maxVertex = s;
+                        numEdges = s.getEdges();
+                    }
+                }
+        }
+        return maxVertex;
+    }
+
 
     private static boolean checkAlpha(ELGraph graph, double param){
         boolean isInAlpha = true;
@@ -193,7 +240,6 @@ public class Methods {
         String graph1 = "erdos_renyi_small/erdos_renyi_100_0.05_0.2_0.txt";
         String graph2 = "erdos_renyi_small/grafo.txt";
         String graph3 = "erdos_renyi_small/0-graph1";
-//        ELGraph<String, String> graph = readGraph(graph1);
         ELGraph<String, String> graph = readGraph(graph3);
         Solution solution = new Solution(graph);
 
@@ -202,15 +248,18 @@ public class Methods {
         double param = alpha * n;
 
         System.out.println("Param :" +param);
-//        while (!checkAlpha(graph, param)){
-//            Vertex deleted = getRandomVertex(graph);
-//            Vertex deleted = getMaxGrade(graph);
-//            Vertex deleted = getMoreCloseness(graph);
-//            Vertex deleted = getMoreBetweeness(graph);
-//            System.out.println("Vertex: "+ deleted.getValue() +" deleted with "+ deleted.getEdges() + " edges");
-//            graph.removeVertex(deleted);
-//            solution.insertVertexDeleted(deleted);
-//
-//        }
+        while (!checkAlpha(graph, param)){
+            /* Type can be:
+            * grade-> return the node that contains more edges.
+            * closeness-> return the node by closeness algorithm highest.
+            * betweeness -> return the node by betweenes algorithm highest.
+            * pageRank -> return the node by pageRank algorithm highest.
+            * */
+            Vertex deleted = getMore(graph,"pageRank");
+            System.out.println("Vertex: "+ deleted.getValue() +" deleted with "+ deleted.getEdges() + " edges");
+            graph.removeVertex(deleted);
+            solution.insertVertexDeleted(deleted);
+
+        }
     }
 }
