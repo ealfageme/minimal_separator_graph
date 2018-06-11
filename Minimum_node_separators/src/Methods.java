@@ -57,7 +57,7 @@ public class Methods {
         list.clear();
         return list;
     }
-    
+
     private static ELGraph<String, String> readGraph(String filePath) throws IOException {
         ELGraph<String, String> graph = new ELGraph<>();
         File file = new File(filePath);
@@ -240,6 +240,7 @@ public class Methods {
         String graph1 = "erdos_renyi_small/erdos_renyi_100_0.05_0.2_0.txt";
         String graph2 = "erdos_renyi_small/grafo.txt";
         String graph3 = "erdos_renyi_small/0-graph1";
+        ELGraph<String, String> OriginalGraph = readGraph(graph3);
         ELGraph<String, String> graph = readGraph(graph3);
         Solution solution = new Solution(graph);
 
