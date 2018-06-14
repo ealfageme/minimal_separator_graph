@@ -11,11 +11,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="ELGraph.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ELGraph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
+            <state relative-caret-position="828">
               <caret line="275" column="0" lean-forward="false" selection-start-line="275" selection-start-column="0" selection-end-line="275" selection-end-column="0" />
               <folding>
                 <element signature="class#ELVertex#0;class#ELGraph#0" expanded="false" />
@@ -45,14 +45,13 @@
       <file leaf-file-name="Methods.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Methods.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="541">
-              <caret line="261" column="43" lean-forward="true" selection-start-line="261" selection-start-column="43" selection-end-line="261" selection-end-column="43" />
+            <state relative-caret-position="-139">
+              <caret line="259" column="17" lean-forward="true" selection-start-line="259" selection-start-column="17" selection-end-line="259" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#bfs#0;class#Methods#0" expanded="false" />
                 <element signature="method#bfs#1;class#Methods#0" expanded="false" />
-                <element signature="method#getRandomVertex#0;class#Methods#0" expanded="false" />
-                <element signature="method#closeness#0;class#Methods#0" expanded="false" />
+                <element signature="method#readGraph#0;class#Methods#0" expanded="false" />
                 <element signature="method#betweeness#0;class#Methods#0" expanded="false" />
                 <element signature="method#pageRank#0;class#Methods#0" expanded="false" />
                 <element signature="method#getIndex#0;class#Methods#0" expanded="false" />
@@ -112,8 +111,8 @@
         <option value="$PROJECT_DIR$/erdos_renyi_small/0-graph1" />
         <option value="$PROJECT_DIR$/erdos_renyi_small/0-graph2" />
         <option value="$PROJECT_DIR$/src/ELGraph.java" />
-        <option value="$PROJECT_DIR$/src/Methods.java" />
         <option value="$PROJECT_DIR$/src/Solution.java" />
+        <option value="$PROJECT_DIR$/src/Methods.java" />
       </list>
     </option>
   </component>
@@ -144,8 +143,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -162,8 +162,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -336,26 +335,28 @@
       <workItem from="1528106289769" duration="10501000" />
       <workItem from="1528271564352" duration="15757000" />
       <workItem from="1528443878849" duration="13709000" />
-      <workItem from="1528712840387" duration="1265000" />
+      <workItem from="1528712840387" duration="1358000" />
+      <workItem from="1528965358439" duration="7072000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81797000" />
+    <option name="totallyTimeSpent" value="88962000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="55" y="-4" width="1311" height="772" extended-state="6" />
+    <frame x="55" y="-4" width="1313" height="780" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2037325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.58942455" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -371,7 +372,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -392,7 +392,7 @@
           <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="29" />
+      <option name="time" value="31" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -405,8 +405,7 @@
             <element signature="imports" expanded="true" />
             <element signature="method#bfs#0;class#Methods#0" expanded="false" />
             <element signature="method#bfs#1;class#Methods#0" expanded="false" />
-            <element signature="method#getRandomVertex#0;class#Methods#0" expanded="false" />
-            <element signature="method#closeness#0;class#Methods#0" expanded="false" />
+            <element signature="method#readGraph#0;class#Methods#0" expanded="false" />
             <element signature="method#betweeness#0;class#Methods#0" expanded="false" />
             <element signature="method#pageRank#0;class#Methods#0" expanded="false" />
             <element signature="method#getIndex#0;class#Methods#0" expanded="false" />
@@ -460,8 +459,7 @@
             <element signature="imports" expanded="true" />
             <element signature="method#bfs#0;class#Methods#0" expanded="false" />
             <element signature="method#bfs#1;class#Methods#0" expanded="false" />
-            <element signature="method#getRandomVertex#0;class#Methods#0" expanded="false" />
-            <element signature="method#closeness#0;class#Methods#0" expanded="false" />
+            <element signature="method#readGraph#0;class#Methods#0" expanded="false" />
             <element signature="method#betweeness#0;class#Methods#0" expanded="false" />
             <element signature="method#pageRank#0;class#Methods#0" expanded="false" />
             <element signature="method#getIndex#0;class#Methods#0" expanded="false" />
@@ -515,8 +513,7 @@
             <element signature="imports" expanded="true" />
             <element signature="method#bfs#0;class#Methods#0" expanded="false" />
             <element signature="method#bfs#1;class#Methods#0" expanded="false" />
-            <element signature="method#getRandomVertex#0;class#Methods#0" expanded="false" />
-            <element signature="method#closeness#0;class#Methods#0" expanded="false" />
+            <element signature="method#readGraph#0;class#Methods#0" expanded="false" />
             <element signature="method#betweeness#0;class#Methods#0" expanded="false" />
             <element signature="method#pageRank#0;class#Methods#0" expanded="false" />
             <element signature="method#getIndex#0;class#Methods#0" expanded="false" />
@@ -570,8 +567,7 @@
             <element signature="imports" expanded="true" />
             <element signature="method#bfs#0;class#Methods#0" expanded="false" />
             <element signature="method#bfs#1;class#Methods#0" expanded="false" />
-            <element signature="method#getRandomVertex#0;class#Methods#0" expanded="false" />
-            <element signature="method#closeness#0;class#Methods#0" expanded="false" />
+            <element signature="method#readGraph#0;class#Methods#0" expanded="false" />
             <element signature="method#betweeness#0;class#Methods#0" expanded="false" />
             <element signature="method#pageRank#0;class#Methods#0" expanded="false" />
             <element signature="method#getIndex#0;class#Methods#0" expanded="false" />
@@ -647,8 +643,7 @@
             <element signature="imports" expanded="true" />
             <element signature="method#bfs#0;class#Methods#0" expanded="false" />
             <element signature="method#bfs#1;class#Methods#0" expanded="false" />
-            <element signature="method#getRandomVertex#0;class#Methods#0" expanded="false" />
-            <element signature="method#closeness#0;class#Methods#0" expanded="false" />
+            <element signature="method#readGraph#0;class#Methods#0" expanded="false" />
             <element signature="method#betweeness#0;class#Methods#0" expanded="false" />
             <element signature="method#pageRank#0;class#Methods#0" expanded="false" />
             <element signature="method#getIndex#0;class#Methods#0" expanded="false" />
@@ -735,8 +730,7 @@
             <element signature="imports" expanded="true" />
             <element signature="method#bfs#0;class#Methods#0" expanded="false" />
             <element signature="method#bfs#1;class#Methods#0" expanded="false" />
-            <element signature="method#getRandomVertex#0;class#Methods#0" expanded="false" />
-            <element signature="method#closeness#0;class#Methods#0" expanded="false" />
+            <element signature="method#readGraph#0;class#Methods#0" expanded="false" />
             <element signature="method#betweeness#0;class#Methods#0" expanded="false" />
             <element signature="method#pageRank#0;class#Methods#0" expanded="false" />
             <element signature="method#getIndex#0;class#Methods#0" expanded="false" />
@@ -770,8 +764,7 @@
             <element signature="imports" expanded="true" />
             <element signature="method#bfs#0;class#Methods#0" expanded="false" />
             <element signature="method#bfs#1;class#Methods#0" expanded="false" />
-            <element signature="method#getRandomVertex#0;class#Methods#0" expanded="false" />
-            <element signature="method#closeness#0;class#Methods#0" expanded="false" />
+            <element signature="method#readGraph#0;class#Methods#0" expanded="false" />
             <element signature="method#betweeness#0;class#Methods#0" expanded="false" />
             <element signature="method#pageRank#0;class#Methods#0" expanded="false" />
             <element signature="method#getIndex#0;class#Methods#0" expanded="false" />
@@ -812,8 +805,7 @@
             <element signature="imports" expanded="true" />
             <element signature="method#bfs#0;class#Methods#0" expanded="false" />
             <element signature="method#bfs#1;class#Methods#0" expanded="false" />
-            <element signature="method#getRandomVertex#0;class#Methods#0" expanded="false" />
-            <element signature="method#closeness#0;class#Methods#0" expanded="false" />
+            <element signature="method#readGraph#0;class#Methods#0" expanded="false" />
             <element signature="method#betweeness#0;class#Methods#0" expanded="false" />
             <element signature="method#pageRank#0;class#Methods#0" expanded="false" />
             <element signature="method#getIndex#0;class#Methods#0" expanded="false" />
@@ -907,7 +899,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ELGraph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
+        <state relative-caret-position="828">
           <caret line="275" column="0" lean-forward="false" selection-start-line="275" selection-start-column="0" selection-end-line="275" selection-end-column="0" />
           <folding>
             <element signature="class#ELVertex#0;class#ELGraph#0" expanded="false" />
@@ -943,14 +935,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Methods.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="261" column="43" lean-forward="true" selection-start-line="261" selection-start-column="43" selection-end-line="261" selection-end-column="43" />
+        <state relative-caret-position="-139">
+          <caret line="259" column="17" lean-forward="true" selection-start-line="259" selection-start-column="17" selection-end-line="259" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#bfs#0;class#Methods#0" expanded="false" />
             <element signature="method#bfs#1;class#Methods#0" expanded="false" />
-            <element signature="method#getRandomVertex#0;class#Methods#0" expanded="false" />
-            <element signature="method#closeness#0;class#Methods#0" expanded="false" />
+            <element signature="method#readGraph#0;class#Methods#0" expanded="false" />
             <element signature="method#betweeness#0;class#Methods#0" expanded="false" />
             <element signature="method#pageRank#0;class#Methods#0" expanded="false" />
             <element signature="method#getIndex#0;class#Methods#0" expanded="false" />

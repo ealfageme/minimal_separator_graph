@@ -92,7 +92,12 @@ public class Methods {
         int random = (int) (Math.random()*(vertexList.size()-1)-0);
         return vertexList.get(random);
     }
+    private static Vertex getRandomVertex(Set<Vertex> vertex){
+        ArrayList<Vertex> vertexList = new ArrayList<>(vertex);
+        int random = (int) (Math.random()*(vertexList.size()-1)-0);
+        return vertexList.get(random);
 
+    }
     private static double closeness(ELGraph graph, Vertex v){
         double value = 0;
         int bfsValue;
@@ -100,12 +105,8 @@ public class Methods {
         for (Vertex s: allVertex){
             if (!v.equals(s)) {
                 bfsValue = bfs(graph, v, s).size();
-                if (bfsValue != 0) {
-                    value += bfsValue;
-                }
-                else {
-                    value += 1000;
-                }
+                if (bfsValue != 0) value += bfsValue;
+                else value += 1000;
             }
         }
         return allVertex.size()/value;
@@ -214,6 +215,15 @@ public class Methods {
         return maxVertex;
     }
 
+    private static Set<Vertex> getListCandidates(ELGraph graph, String type, double range){
+        Set<Vertex> list = new HashSet<>();
+        Set<Vertex> allVertex = graph.getVertexList();
+        if (type.equals("closeness")) {
+            for (Vertex v : allVertex)
+                if (range < closeness(graph, v)) list.add(v);
+        }
+        return list;
+    }
 
     private static boolean checkAlpha(ELGraph graph, double param){
         boolean isInAlpha = true;
@@ -234,33 +244,54 @@ public class Methods {
         }
         return isInAlpha;
     }
-
+    private static double getNumber(ELGraph graph, String option, String value) {
+        Vertex random = getRandomVertex(graph);
+        double vertex = 0.0f;
+        Set<Vertex> allVertex = graph.getVertexList();
+        switch (option) {
+            case "closeness":
+                vertex = closeness(graph,random);
+                for (Vertex v : allVertex) {
+                    if (value.equals("min")) {
+                        if (closeness(graph, v) < vertex) vertex = closeness(graph,v);
+                    } else if (value.equals("max")) {
+                        if (closeness(graph, v) > vertex) vertex = closeness(graph,v);
+                    }
+                }
+        }
+        System.out.println(option + " | " + value + " | " + vertex);
+        return vertex;
+    }
     public static void main(String[] args) throws IOException {
         double alpha = 0.4;
         String graph1 = "erdos_renyi_small/erdos_renyi_100_0.05_0.2_0.txt";
         String graph2 = "erdos_renyi_small/grafo.txt";
         String graph3 = "erdos_renyi_small/0-graph1";
-        ELGraph<String, String> OriginalGraph = readGraph(graph3);
+        ELGraph<String, String> originalGraph = readGraph(graph3);
         ELGraph<String, String> graph = readGraph(graph3);
-        Solution solution = new Solution(graph);
-
+        Solution solution = new Solution(originalGraph, graph);
         int n = graph.getSize();
-
         double param = alpha * n;
+        String option = "closeness";
+        double gMin, gMax;
+        double mu;
+        float muParam = 0.75f;
 
-        System.out.println("Param :" +param);
-        while (!checkAlpha(graph, param)){
-            /* Type can be:
-            * grade-> return the node that contains more edges.
-            * closeness-> return the node by closeness algorithm highest.
-            * betweeness -> return the node by betweenes algorithm highest.
-            * pageRank -> return the node by pageRank algorithm highest.
-            * */
-            Vertex deleted = getMore(graph,"pageRank");
+        Vertex first  =getRandomVertex(graph);
+        graph.removeVertex(first);
+
+        while (!checkAlpha(graph,param)){
+            gMin = getNumber(graph, option, "min");
+            gMax = getNumber(graph, option, "max");
+            mu = gMax - muParam * (gMax - gMin);
+            System.out.println(mu);
+            Set<Vertex> candidates = getListCandidates(graph,option, mu);
+            Vertex deleted = getRandomVertex(candidates);
             System.out.println("Vertex: "+ deleted.getValue() +" deleted with "+ deleted.getEdges() + " edges");
             graph.removeVertex(deleted);
             solution.insertVertexDeleted(deleted);
-
         }
+
+
     }
 }
