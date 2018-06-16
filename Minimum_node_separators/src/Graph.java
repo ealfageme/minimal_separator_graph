@@ -23,5 +23,7 @@ public interface Graph <V,E> {
 
     V removeVertex(Vertex <V> vertex);
 
-    E removeEdge(Edge <E> edge);    
+    E removeEdge(Edge <E> edge);
+
+    Vertex<V> constains (V value);
 }

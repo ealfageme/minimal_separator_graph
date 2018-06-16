@@ -3,6 +3,7 @@ import jdk.nashorn.internal.runtime.ListAdapter;
 
 import java.beans.VetoableChangeListener;
 import java.io.*;
+import java.lang.annotation.ElementType;
 import java.util.*;
 
 
@@ -71,7 +72,9 @@ public class Methods {
         String line;
         String heads = br.readLine();
         String head[] = heads.split(" ");
-        System.out.println("Vertex: "+head[0]+"\nEdges: "+head[1]+"\nAlpha: "+head[2]);
+        System.out.println(        "Vertex:"+"\t| "+head[0]
+                                +"\nEdges: "+"\t| "+head[1]
+                                +"\nAlpha: "+"\t| "+head[2]);
         HashMap<String, Vertex<String>> maps = new HashMap<>();
         for (int i = 0; i < Integer.parseInt(head[0]); i++){
             Vertex<String> vert = graph.insertVertex(i+"");
@@ -92,12 +95,14 @@ public class Methods {
         int random = (int) (Math.random()*(vertexList.size()-1)-0);
         return vertexList.get(random);
     }
+
     private static Vertex getRandomVertex(Set<Vertex> vertex){
         ArrayList<Vertex> vertexList = new ArrayList<>(vertex);
         int random = (int) (Math.random()*(vertexList.size()-1)-0);
         return vertexList.get(random);
 
     }
+
     private static double closeness(ELGraph graph, Vertex v){
         double value = 0;
         int bfsValue;
@@ -163,7 +168,7 @@ public class Methods {
         return maps;
 
     }
-
+    // By array of Vertex, return the index of array that the vertex is located
     private static int getIndex(Vertex[] vs, Vertex op){
         for (int i = 0; i < vs.length;i ++){
             if (vs[i].equals(op))
@@ -214,7 +219,7 @@ public class Methods {
         }
         return maxVertex;
     }
-
+    // By graph, type and range, return a set with vertex that
     private static Set<Vertex> getListCandidates(ELGraph graph, String type, double range){
         Set<Vertex> list = new HashSet<>();
         Set<Vertex> allVertex = graph.getVertexList();
@@ -244,6 +249,7 @@ public class Methods {
         }
         return isInAlpha;
     }
+
     private static double getNumber(ELGraph graph, String option, String value) {
         Vertex random = getRandomVertex(graph);
         double vertex = 0.0f;
@@ -259,19 +265,82 @@ public class Methods {
                     }
                 }
         }
-        System.out.println(option + " | " + value + " | " + vertex);
+//        System.out.println(option + " | " + value + " | " + vertex);
         return vertex;
     }
+    private static Solution improve(Solution solution) {
+        ELGraph graph = solution.getGraph();
+        ArrayList<Vertex> deletedVertex = solution.getVertexDeleted();
+        Set<Vertex> allVertex = graph.getVertexList();
+        System.out.println("allVertex " + allVertex);
+        System.out.println("deletedVertex " + deletedVertex);
+        boolean improve = true;
+        while (improve) {
+            for (int i = 0; i < deletedVertex.size(); i++) {
+                for (int j = i; j < deletedVertex.size();j++) {
+                    Vertex dv = deletedVertex.get(i);
+                    Vertex dw = deletedVertex.get(j);
+                    if (!dv.equals(dw)){
+                        for (Vertex v : allVertex) {
+                            System.out.println("Checking " + dv.toString() + " "
+                                    + dw.toString() + " x " + v.toString());
+                            if (twoForOne(solution, dv, dw, v)) {
+                                System.out.println("Change " + dv.toString() + ", "
+                                        + dw.toString() + " x " + v.toString());
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            improve = false;
+        }
+    return solution;
+    }
+
+    private static boolean twoForOne(Solution solution, Vertex dv, Vertex dw, Vertex v) {
+        ELGraph graph = solution.getGraph();
+        ELGraph originalGraph = solution.getOriginalGraph();
+        graph.insertVertex(dv.getValue());
+        graph.insertVertex(dw.getValue());
+        Vertex a = originalGraph.constains(dv.getValue());
+        Vertex b = originalGraph.constains(dv.getValue());
+        if (a != null && b!= null){
+            HashSet <Edge> incidentEdgesA = (HashSet<Edge>) originalGraph.incidentEdges(a);
+            HashSet <Edge> incidentEdgesB = (HashSet<Edge>) originalGraph.incidentEdges(a);
+            for (Edge edge : incidentEdgesA) {
+                System.out.println(edge);
+            }
+            for (Edge edge : incidentEdgesB){
+                System.out.println(edge);
+            }
+        } else{
+            System.out.println("I dont find one or more vertex: "
+                    + dv.getValue()+" and/or"+dw.getValue());
+        }
+        Vertex find = graph.constains(v.getValue());
+        graph.removeVertex(find);
+        if (checkAlpha(graph, solution.getParam())){
+            return true;
+        }else{
+            return false;
+            //deshacer
+        }
+
+    }
+
     public static void main(String[] args) throws IOException {
-        double alpha = 0.4;
-        String graph1 = "erdos_renyi_small/erdos_renyi_100_0.05_0.2_0.txt";
-        String graph2 = "erdos_renyi_small/grafo.txt";
-        String graph3 = "erdos_renyi_small/0-graph1";
-        ELGraph<String, String> originalGraph = readGraph(graph3);
-        ELGraph<String, String> graph = readGraph(graph3);
-        Solution solution = new Solution(originalGraph, graph);
+        double alpha = 0.3;
+////        String graph1 = "erdos_renyi_small/erdos_renyi_100_0.05_0.2_0.txt";
+//          String graph1 = "erdos_renyi_small/grafo.txt";
+        String graph1 = "erdos_renyi_small/0-graph1";
+        ELGraph<String, String> originalGraph = readGraph(graph1);
+        ELGraph<String, String> graph = readGraph(graph1);
+        System.out.println("_____________________"+"\n");
+        System.out.println("deleting vertex");
         int n = graph.getSize();
         double param = alpha * n;
+        Solution solution = new Solution(originalGraph, graph, param);
         String option = "closeness";
         double gMin, gMax;
         double mu;
@@ -284,13 +353,19 @@ public class Methods {
             gMin = getNumber(graph, option, "min");
             gMax = getNumber(graph, option, "max");
             mu = gMax - muParam * (gMax - gMin);
-            System.out.println(mu);
             Set<Vertex> candidates = getListCandidates(graph,option, mu);
             Vertex deleted = getRandomVertex(candidates);
             System.out.println("Vertex: "+ deleted.getValue() +" deleted with "+ deleted.getEdges() + " edges");
             graph.removeVertex(deleted);
             solution.insertVertexDeleted(deleted);
         }
+        System.out.println("_____________________"+"\n");
+        System.out.println("changing two for one");
+//        System.out.println(solution.toString());
+        solution = improve(solution);
+        System.out.println("_____________________"+"\n");
+        System.out.println(solution.toString());
+
 
 
     }

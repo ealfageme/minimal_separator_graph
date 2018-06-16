@@ -266,6 +266,13 @@ public class ELGraph<V,E> implements Graph <V,E> {
         throw new RuntimeException("The vertex is not in the graph");        
     }
 
+    private Vertex constains(V value){
+        for ( Vertex v :this.vertexList){
+            if (v.getValue().equals(value))
+                return v;
+        }
+        return null;
+    }
     @Override
     public String toString() {
         String vertex = "Vertex:"+"\n" + this.vertices() + "\n";
