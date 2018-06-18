@@ -266,7 +266,7 @@ public class ELGraph<V,E> implements Graph <V,E> {
         throw new RuntimeException("The vertex is not in the graph");        
     }
 
-    private Vertex constains(V value){
+    public Vertex constains(V value){
         for ( Vertex v :this.vertexList){
             if (v.getValue().equals(value))
                 return v;
@@ -281,4 +281,17 @@ public class ELGraph<V,E> implements Graph <V,E> {
         return toString;
     }
 
+    public Edge<E> addEdgeByValue(V a, V b , E edgeValue){
+        Vertex v1 = constains(a);
+        Vertex v2 = constains(b);
+        if (v1.equals(v2)){
+            return null;
+        }
+        ELEdge<E> e = new ELEdge<>(edgeValue,v1,v2,this);
+
+        if (edgeList.contains(e))
+            edgeList.remove(e);
+        edgeList.add(e);
+        return e;
+    }
 }

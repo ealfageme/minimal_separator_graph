@@ -1,9 +1,6 @@
 
-import jdk.nashorn.internal.runtime.ListAdapter;
-
-import java.beans.VetoableChangeListener;
 import java.io.*;
-import java.lang.annotation.ElementType;
+
 import java.util.*;
 
 
@@ -268,51 +265,70 @@ public class Methods {
 //        System.out.println(option + " | " + value + " | " + vertex);
         return vertex;
     }
+
     private static Solution improve(Solution solution) {
         ELGraph graph = solution.getGraph();
         ArrayList<Vertex> deletedVertex = solution.getVertexDeleted();
-        Set<Vertex> allVertex = graph.getVertexList();
+        Set<Vertex> setVertex = graph.getVertexList();
+        ArrayList<Vertex> allVertex = new ArrayList<>();
+        allVertex.addAll(setVertex);
         System.out.println("allVertex " + allVertex);
         System.out.println("deletedVertex " + deletedVertex);
+        System.out.println("***********************");
         boolean improve = true;
         while (improve) {
+            outerloop:
             for (int i = 0; i < deletedVertex.size(); i++) {
                 for (int j = i; j < deletedVertex.size();j++) {
                     Vertex dv = deletedVertex.get(i);
                     Vertex dw = deletedVertex.get(j);
                     if (!dv.equals(dw)){
-                        for (Vertex v : allVertex) {
-                            System.out.println("Checking " + dv.toString() + " "
-                                    + dw.toString() + " x " + v.toString());
-                            if (twoForOne(solution, dv, dw, v)) {
+                        for (Vertex anAllVertex : allVertex) {
+                            if (twoForOne(solution, dv, dw, anAllVertex)) {
                                 System.out.println("Change " + dv.toString() + ", "
-                                        + dw.toString() + " x " + v.toString());
-                                break;
+                                        + dw.toString() + " x " + anAllVertex.toString());
+                                break outerloop;
                             }
                         }
                     }
+                    if ((i == deletedVertex.size()-1)&&(j == i))
+                        improve = false;
                 }
             }
-            improve = false;
         }
     return solution;
     }
 
     private static boolean twoForOne(Solution solution, Vertex dv, Vertex dw, Vertex v) {
+        System.out.println("Changing "+dv.getValue()+" "+dw.getValue() +" for "+ v.getValue());
         ELGraph graph = solution.getGraph();
         ELGraph originalGraph = solution.getOriginalGraph();
-        graph.insertVertex(dv.getValue());
-        graph.insertVertex(dw.getValue());
+        Vertex aa = graph.insertVertex(dv.getValue());
+//        System.out.println("add vertex " + aa.getValue());
+        Vertex bb = graph.insertVertex(dw.getValue());
+//        System.out.println("add vertex " + bb.getValue());
         Vertex a = originalGraph.constains(dv.getValue());
-        Vertex b = originalGraph.constains(dv.getValue());
+        Vertex b = originalGraph.constains(dw.getValue());
         if (a != null && b!= null){
             HashSet <Edge> incidentEdgesA = (HashSet<Edge>) originalGraph.incidentEdges(a);
-            HashSet <Edge> incidentEdgesB = (HashSet<Edge>) originalGraph.incidentEdges(a);
+            HashSet <Edge> incidentEdgesB = (HashSet<Edge>) originalGraph.incidentEdges(b);
             for (Edge edge : incidentEdgesA) {
-                System.out.println(edge);
+                if ((graph.constains(edge.getEndVertex().getValue())!=null)&&
+                        (graph.constains(edge.getStartVertex().getValue())!=null)) {
+                    graph.addEdgeByValue(edge.getEndVertex().getValue(), edge.getStartVertex().getValue(), null);
+//                    System.out.println("add edge "+
+//                            edge.getEndVertex().getValue()+" "+
+//                            edge.getStartVertex().getValue());
+                }
             }
             for (Edge edge : incidentEdgesB){
-                System.out.println(edge);
+                if ((graph.constains(edge.getEndVertex().getValue())!=null)&&
+                        (graph.constains(edge.getStartVertex().getValue())!=null)){
+                    graph.addEdgeByValue(edge.getEndVertex().getValue(), edge.getStartVertex().getValue(),null);
+//                    System.out.println("add edge "+
+//                            edge.getEndVertex().getValue()+" "+
+//                            edge.getStartVertex().getValue());
+                }
             }
         } else{
             System.out.println("I dont find one or more vertex: "
@@ -320,11 +336,48 @@ public class Methods {
         }
         Vertex find = graph.constains(v.getValue());
         graph.removeVertex(find);
+//        System.out.println("remove vertex " + find);
+//        System.out.println("New graph");
+//        System.out.println(graph);
+
         if (checkAlpha(graph, solution.getParam())){
+            System.out.println(" CHECK CONDITION");
+//            System.out.println(graph);
+//            System.out.println(" --------------+");
+            solution.insertVertexDeleted(find);
+            solution.deleteVertexDeleted(aa);
+            solution.deleteVertexDeleted(bb);
+            System.out.println("Solution");
+            System.out.println(solution);
+            System.out.println(" ");
+
             return true;
         }else{
+            System.out.println("dont check the condition. restored");
+            Vertex restored = graph.insertVertex(find.getValue());
+//            System.out.println("Add " +restored.getValue());
+            Vertex restoredAux = originalGraph.constains(restored.getValue());
+            HashSet <Edge> incidentEdges = (HashSet<Edge>) originalGraph.incidentEdges(restoredAux);
+            for (Edge edge:incidentEdges){
+                if ((graph.constains(edge.getEndVertex().getValue())!=null)&&
+                        (graph.constains(edge.getStartVertex().getValue())!=null)){
+                    graph.addEdgeByValue(edge.getEndVertex().getValue(), edge.getStartVertex().getValue(),null);
+//                    System.out.println("Add " +
+//                            edge.getStartVertex().getValue() +" "+
+//                            edge.getEndVertex().getValue()
+//                    );
+                }
+            }
+//            System.out.println("Vertex: "+ aa.getValue() +" deleted with " + aa.getEdges());
+            graph.removeVertex(aa);
+//
+//            System.out.println("Vertex: "+ bb.getValue() +" deleted with " + bb.getEdges());
+            graph.removeVertex(bb);
+//            System.out.println("***********************************");
+//            System.out.println(graph);
+            System.out.println("***********************************");
             return false;
-            //deshacer
+
         }
 
     }
@@ -347,7 +400,9 @@ public class Methods {
         float muParam = 0.75f;
 
         Vertex first  =getRandomVertex(graph);
+        System.out.println("Vertex: " + first.getValue() + " deleted random with " + first.getEdges() + " edges");
         graph.removeVertex(first);
+        solution.insertVertexDeleted(first);
 
         while (!checkAlpha(graph,param)){
             gMin = getNumber(graph, option, "min");
@@ -360,10 +415,8 @@ public class Methods {
             solution.insertVertexDeleted(deleted);
         }
         System.out.println("_____________________"+"\n");
-        System.out.println("changing two for one");
-//        System.out.println(solution.toString());
         solution = improve(solution);
-        System.out.println("_____________________"+"\n");
+        System.out.println("_____________________FINAL____________Ç"+"\n");
         System.out.println(solution.toString());
 
 

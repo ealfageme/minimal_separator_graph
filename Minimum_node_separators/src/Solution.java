@@ -13,13 +13,13 @@ public class Solution {
         this.vertexDeleted = new ArrayList<>();
         this.param = param;
     }
-    public void insertVertexDeleted(Vertex<String> v){
+    public void insertVertexDeleted(Vertex v){
         this.vertexDeleted.add(v);
     }
 
     @Override
     public String toString() {
-        return "-------Original Graph-------:\n"
+        return "-------Original Graph-------\n"
                 + originalGraph + "\n"
                 + "-------Solution-------\n"
                 + graph + "\n"
@@ -40,6 +40,14 @@ public class Solution {
 
     public double getParam() {
         return param;
+    }
+    public void deleteVertexDeleted(Vertex vertex){
+        Vertex aux = null;
+        for (Vertex v: vertexDeleted){
+            if (v.getValue().equals(vertex.getValue()))
+                aux = v;
+        }
+        vertexDeleted.remove(aux);
     }
 }
 

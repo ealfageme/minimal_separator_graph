@@ -12,85 +12,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ELGraph.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ELGraph.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="267" column="0" lean-forward="true" selection-start-line="267" selection-start-column="0" selection-end-line="267" selection-end-column="0" />
-              <folding>
-                <element signature="class#ELVertex#0;class#ELGraph#0" expanded="false" />
-                <element signature="class#ELEdge#0;class#ELGraph#0" expanded="false" />
-                <element signature="method#hashCode#0;class#ELEdge#0;class#ELGraph#0" expanded="false" />
-                <element signature="method#equals#0;class#ELEdge#0;class#ELGraph#0" expanded="false" />
-                <element signature="method#ELEdge#0;class#ELEdge#0;class#ELGraph#0" expanded="false" />
-                <element signature="method#toString#0;class#ELEdge#0;class#ELGraph#0" expanded="false" />
-                <element signature="method#incidentEdges#0;class#ELGraph#0" expanded="false" />
-                <element signature="method#opposite#0;class#ELGraph#0" expanded="false" />
-                <element signature="method#endVertices#0;class#ELGraph#0" expanded="false" />
-                <element signature="method#areAdjacent#0;class#ELGraph#0" expanded="false" />
-                <element signature="method#replace#0;class#ELGraph#0" expanded="false" />
-                <element signature="method#replace#1;class#ELGraph#0" expanded="false" />
-                <element signature="method#insertVertex#0;class#ELGraph#0" expanded="false" />
-                <element signature="e#5877#5878#0" expanded="true" />
-                <element signature="e#5910#5911#0" expanded="true" />
-                <element signature="method#insertEdge#0;class#ELGraph#0" expanded="false" />
-                <element signature="method#removeVertex#0;class#ELGraph#0" expanded="false" />
-                <element signature="method#removeEdge#0;class#ELGraph#0" expanded="false" />
-                <element signature="method#checkEdge#0;class#ELGraph#0" expanded="false" />
-                <element signature="method#checkVertex#0;class#ELGraph#0" expanded="false" />
-                <element signature="method#toString#0;class#ELGraph#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Graph.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Graph.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="27" column="34" lean-forward="true" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Methods.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Methods.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="316" column="15" lean-forward="true" selection-start-line="316" selection-start-column="15" selection-end-line="316" selection-end-column="15" />
+            <state relative-caret-position="33">
+              <caret line="290" column="29" lean-forward="true" selection-start-line="290" selection-start-column="29" selection-end-line="290" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#bfs#0;class#Methods#0" expanded="false" />
                 <element signature="method#bfs#1;class#Methods#0" expanded="false" />
+                <element signature="method#readGraph#0;class#Methods#0" expanded="false" />
                 <element signature="method#getRandomVertex#0;class#Methods#0" expanded="false" />
                 <element signature="method#getRandomVertex#1;class#Methods#0" expanded="false" />
+                <element signature="method#closeness#0;class#Methods#0" expanded="false" />
                 <element signature="method#betweeness#0;class#Methods#0" expanded="false" />
+                <element signature="method#pageRank#0;class#Methods#0" expanded="false" />
                 <element signature="method#getIndex#0;class#Methods#0" expanded="false" />
                 <element signature="method#getMore#0;class#Methods#0" expanded="false" />
                 <element signature="method#getListCandidates#0;class#Methods#0" expanded="false" />
                 <element signature="method#checkAlpha#0;class#Methods#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Solution.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Solution.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-21">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding>
-                <element signature="e#522#523#0" expanded="true" />
-                <element signature="e#563#564#0" expanded="true" />
-                <element signature="e#910#911#0" expanded="true" />
-                <element signature="e#946#947#0" expanded="true" />
-                <element signature="e#995#996#0" expanded="true" />
-                <element signature="e#1023#1024#0" expanded="true" />
-                <element signature="e#1080#1081#0" expanded="true" />
-                <element signature="e#1116#1117#0" expanded="true" />
-                <element signature="e#1148#1149#0" expanded="true" />
-                <element signature="e#1176#1177#0" expanded="true" />
+                <element signature="method#getNumber#0;class#Methods#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -112,6 +53,10 @@
       <find>getV</find>
       <find>getIndex</find>
       <find>incide</find>
+      <find>is not</find>
+      <find>boolean</find>
+      <find>inser</find>
+      <find>aa</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src</dir>
@@ -126,7 +71,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Edge.java" />
         <option value="$PROJECT_DIR$/src/Instance.java" />
         <option value="/media/usuario/DATOS/Eloy/Universidad/3º Año/1º Cuatrimestre/EDA - Estructura de Datos Avanzados - OK/EDA/Tema-5.Grafos/graphs/ELGraph.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
@@ -135,9 +79,10 @@
         <option value="$PROJECT_DIR$/erdos_renyi_small/grafo.txt" />
         <option value="$PROJECT_DIR$/erdos_renyi_small/0-graph1" />
         <option value="$PROJECT_DIR$/erdos_renyi_small/0-graph2" />
-        <option value="$PROJECT_DIR$/src/Solution.java" />
-        <option value="$PROJECT_DIR$/src/ELGraph.java" />
         <option value="$PROJECT_DIR$/src/Graph.java" />
+        <option value="$PROJECT_DIR$/src/Edge.java" />
+        <option value="$PROJECT_DIR$/src/ELGraph.java" />
+        <option value="$PROJECT_DIR$/src/Solution.java" />
         <option value="$PROJECT_DIR$/src/Methods.java" />
       </list>
     </option>
@@ -180,15 +125,20 @@
             <path>
               <item name="Minimum_node_separators" type="b2602c69:ProjectViewProjectNode" />
               <item name="Minimum_node_separators" type="462c0819:PsiDirectoryNode" />
+              <item name="erdos_renyi_small" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Minimum_node_separators" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Minimum_node_separators" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -363,12 +313,13 @@
       <workItem from="1528443878849" duration="13709000" />
       <workItem from="1528712840387" duration="1358000" />
       <workItem from="1528965358439" duration="7738000" />
-      <workItem from="1529139380805" duration="11183000" />
+      <workItem from="1529139380805" duration="11300000" />
+      <workItem from="1529308020608" duration="15379000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100811000" />
+    <option name="totallyTimeSpent" value="116307000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="-4" width="1313" height="780" extended-state="6" />
@@ -382,7 +333,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4696734" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4043546" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -419,7 +370,7 @@
           <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="31" />
+      <option name="time" value="33" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -429,16 +380,16 @@
         <state relative-caret-position="0">
           <caret line="0" column="23" lean-forward="false" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
           <folding>
-            <element signature="e#522#523#0" expanded="true" />
-            <element signature="e#563#564#0" expanded="true" />
-            <element signature="e#910#911#0" expanded="true" />
-            <element signature="e#946#947#0" expanded="true" />
-            <element signature="e#995#996#0" expanded="true" />
-            <element signature="e#1023#1024#0" expanded="true" />
-            <element signature="e#1080#1081#0" expanded="true" />
-            <element signature="e#1116#1117#0" expanded="true" />
-            <element signature="e#1148#1149#0" expanded="true" />
-            <element signature="e#1176#1177#0" expanded="true" />
+            <element signature="e#514#515#0" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+            <element signature="e#901#902#0" expanded="true" />
+            <element signature="e#937#938#0" expanded="true" />
+            <element signature="e#986#987#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1071#1072#0" expanded="true" />
+            <element signature="e#1107#1108#0" expanded="true" />
+            <element signature="e#1139#1140#0" expanded="true" />
+            <element signature="e#1167#1168#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -449,12 +400,9 @@
           <caret line="92" column="99" lean-forward="false" selection-start-line="92" selection-start-column="99" selection-end-line="92" selection-end-column="99" />
           <folding>
             <element signature="class#ELVertex#0;class#ELGraph#0" expanded="false" />
-            <element signature="class#ELEdge#0;class#ELGraph#0" expanded="false" />
             <element signature="method#hashCode#0;class#ELEdge#0;class#ELGraph#0" expanded="false" />
-            <element signature="method#equals#0;class#ELEdge#0;class#ELGraph#0" expanded="false" />
             <element signature="method#ELEdge#0;class#ELEdge#0;class#ELGraph#0" expanded="false" />
             <element signature="method#toString#0;class#ELEdge#0;class#ELGraph#0" expanded="false" />
-            <element signature="method#incidentEdges#0;class#ELGraph#0" expanded="false" />
             <element signature="method#opposite#0;class#ELGraph#0" expanded="false" />
             <element signature="method#endVertices#0;class#ELGraph#0" expanded="false" />
             <element signature="method#areAdjacent#0;class#ELGraph#0" expanded="false" />
@@ -463,7 +411,6 @@
             <element signature="method#insertVertex#0;class#ELGraph#0" expanded="false" />
             <element signature="e#5877#5878#0" expanded="true" />
             <element signature="e#5910#5911#0" expanded="true" />
-            <element signature="method#insertEdge#0;class#ELGraph#0" expanded="false" />
             <element signature="method#removeVertex#0;class#ELGraph#0" expanded="false" />
             <element signature="method#removeEdge#0;class#ELGraph#0" expanded="false" />
             <element signature="method#checkEdge#0;class#ELGraph#0" expanded="false" />
@@ -481,13 +428,17 @@
             <element signature="imports" expanded="true" />
             <element signature="method#bfs#0;class#Methods#0" expanded="false" />
             <element signature="method#bfs#1;class#Methods#0" expanded="false" />
+            <element signature="method#readGraph#0;class#Methods#0" expanded="false" />
             <element signature="method#getRandomVertex#0;class#Methods#0" expanded="false" />
             <element signature="method#getRandomVertex#1;class#Methods#0" expanded="false" />
+            <element signature="method#closeness#0;class#Methods#0" expanded="false" />
             <element signature="method#betweeness#0;class#Methods#0" expanded="false" />
+            <element signature="method#pageRank#0;class#Methods#0" expanded="false" />
             <element signature="method#getIndex#0;class#Methods#0" expanded="false" />
             <element signature="method#getMore#0;class#Methods#0" expanded="false" />
             <element signature="method#getListCandidates#0;class#Methods#0" expanded="false" />
             <element signature="method#checkAlpha#0;class#Methods#0" expanded="false" />
+            <element signature="method#getNumber#0;class#Methods#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -497,16 +448,16 @@
         <state relative-caret-position="0">
           <caret line="0" column="23" lean-forward="false" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
           <folding>
-            <element signature="e#522#523#0" expanded="true" />
-            <element signature="e#563#564#0" expanded="true" />
-            <element signature="e#910#911#0" expanded="true" />
-            <element signature="e#946#947#0" expanded="true" />
-            <element signature="e#995#996#0" expanded="true" />
-            <element signature="e#1023#1024#0" expanded="true" />
-            <element signature="e#1080#1081#0" expanded="true" />
-            <element signature="e#1116#1117#0" expanded="true" />
-            <element signature="e#1148#1149#0" expanded="true" />
-            <element signature="e#1176#1177#0" expanded="true" />
+            <element signature="e#514#515#0" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+            <element signature="e#901#902#0" expanded="true" />
+            <element signature="e#937#938#0" expanded="true" />
+            <element signature="e#986#987#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1071#1072#0" expanded="true" />
+            <element signature="e#1107#1108#0" expanded="true" />
+            <element signature="e#1139#1140#0" expanded="true" />
+            <element signature="e#1167#1168#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -517,12 +468,9 @@
           <caret line="134" column="5" lean-forward="false" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
           <folding>
             <element signature="class#ELVertex#0;class#ELGraph#0" expanded="false" />
-            <element signature="class#ELEdge#0;class#ELGraph#0" expanded="false" />
             <element signature="method#hashCode#0;class#ELEdge#0;class#ELGraph#0" expanded="false" />
-            <element signature="method#equals#0;class#ELEdge#0;class#ELGraph#0" expanded="false" />
             <element signature="method#ELEdge#0;class#ELEdge#0;class#ELGraph#0" expanded="false" />
             <element signature="method#toString#0;class#ELEdge#0;class#ELGraph#0" expanded="false" />
-            <element signature="method#incidentEdges#0;class#ELGraph#0" expanded="false" />
             <element signature="method#opposite#0;class#ELGraph#0" expanded="false" />
             <element signature="method#endVertices#0;class#ELGraph#0" expanded="false" />
             <element signature="method#areAdjacent#0;class#ELGraph#0" expanded="false" />
@@ -531,7 +479,6 @@
             <element signature="method#insertVertex#0;class#ELGraph#0" expanded="false" />
             <element signature="e#5877#5878#0" expanded="true" />
             <element signature="e#5910#5911#0" expanded="true" />
-            <element signature="method#insertEdge#0;class#ELGraph#0" expanded="false" />
             <element signature="method#removeVertex#0;class#ELGraph#0" expanded="false" />
             <element signature="method#removeEdge#0;class#ELGraph#0" expanded="false" />
             <element signature="method#checkEdge#0;class#ELGraph#0" expanded="false" />
@@ -549,13 +496,17 @@
             <element signature="imports" expanded="true" />
             <element signature="method#bfs#0;class#Methods#0" expanded="false" />
             <element signature="method#bfs#1;class#Methods#0" expanded="false" />
+            <element signature="method#readGraph#0;class#Methods#0" expanded="false" />
             <element signature="method#getRandomVertex#0;class#Methods#0" expanded="false" />
             <element signature="method#getRandomVertex#1;class#Methods#0" expanded="false" />
+            <element signature="method#closeness#0;class#Methods#0" expanded="false" />
             <element signature="method#betweeness#0;class#Methods#0" expanded="false" />
+            <element signature="method#pageRank#0;class#Methods#0" expanded="false" />
             <element signature="method#getIndex#0;class#Methods#0" expanded="false" />
             <element signature="method#getMore#0;class#Methods#0" expanded="false" />
             <element signature="method#getListCandidates#0;class#Methods#0" expanded="false" />
             <element signature="method#checkAlpha#0;class#Methods#0" expanded="false" />
+            <element signature="method#getNumber#0;class#Methods#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -565,16 +516,16 @@
         <state relative-caret-position="0">
           <caret line="0" column="23" lean-forward="false" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
           <folding>
-            <element signature="e#522#523#0" expanded="true" />
-            <element signature="e#563#564#0" expanded="true" />
-            <element signature="e#910#911#0" expanded="true" />
-            <element signature="e#946#947#0" expanded="true" />
-            <element signature="e#995#996#0" expanded="true" />
-            <element signature="e#1023#1024#0" expanded="true" />
-            <element signature="e#1080#1081#0" expanded="true" />
-            <element signature="e#1116#1117#0" expanded="true" />
-            <element signature="e#1148#1149#0" expanded="true" />
-            <element signature="e#1176#1177#0" expanded="true" />
+            <element signature="e#514#515#0" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+            <element signature="e#901#902#0" expanded="true" />
+            <element signature="e#937#938#0" expanded="true" />
+            <element signature="e#986#987#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1071#1072#0" expanded="true" />
+            <element signature="e#1107#1108#0" expanded="true" />
+            <element signature="e#1139#1140#0" expanded="true" />
+            <element signature="e#1167#1168#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -585,12 +536,9 @@
           <caret line="134" column="5" lean-forward="true" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
           <folding>
             <element signature="class#ELVertex#0;class#ELGraph#0" expanded="false" />
-            <element signature="class#ELEdge#0;class#ELGraph#0" expanded="false" />
             <element signature="method#hashCode#0;class#ELEdge#0;class#ELGraph#0" expanded="false" />
-            <element signature="method#equals#0;class#ELEdge#0;class#ELGraph#0" expanded="false" />
             <element signature="method#ELEdge#0;class#ELEdge#0;class#ELGraph#0" expanded="false" />
             <element signature="method#toString#0;class#ELEdge#0;class#ELGraph#0" expanded="false" />
-            <element signature="method#incidentEdges#0;class#ELGraph#0" expanded="false" />
             <element signature="method#opposite#0;class#ELGraph#0" expanded="false" />
             <element signature="method#endVertices#0;class#ELGraph#0" expanded="false" />
             <element signature="method#areAdjacent#0;class#ELGraph#0" expanded="false" />
@@ -599,7 +547,6 @@
             <element signature="method#insertVertex#0;class#ELGraph#0" expanded="false" />
             <element signature="e#5877#5878#0" expanded="true" />
             <element signature="e#5910#5911#0" expanded="true" />
-            <element signature="method#insertEdge#0;class#ELGraph#0" expanded="false" />
             <element signature="method#removeVertex#0;class#ELGraph#0" expanded="false" />
             <element signature="method#removeEdge#0;class#ELGraph#0" expanded="false" />
             <element signature="method#checkEdge#0;class#ELGraph#0" expanded="false" />
@@ -617,13 +564,17 @@
             <element signature="imports" expanded="true" />
             <element signature="method#bfs#0;class#Methods#0" expanded="false" />
             <element signature="method#bfs#1;class#Methods#0" expanded="false" />
+            <element signature="method#readGraph#0;class#Methods#0" expanded="false" />
             <element signature="method#getRandomVertex#0;class#Methods#0" expanded="false" />
             <element signature="method#getRandomVertex#1;class#Methods#0" expanded="false" />
+            <element signature="method#closeness#0;class#Methods#0" expanded="false" />
             <element signature="method#betweeness#0;class#Methods#0" expanded="false" />
+            <element signature="method#pageRank#0;class#Methods#0" expanded="false" />
             <element signature="method#getIndex#0;class#Methods#0" expanded="false" />
             <element signature="method#getMore#0;class#Methods#0" expanded="false" />
             <element signature="method#getListCandidates#0;class#Methods#0" expanded="false" />
             <element signature="method#checkAlpha#0;class#Methods#0" expanded="false" />
+            <element signature="method#getNumber#0;class#Methods#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -648,16 +599,16 @@
         <state relative-caret-position="0">
           <caret line="0" column="23" lean-forward="false" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
           <folding>
-            <element signature="e#522#523#0" expanded="true" />
-            <element signature="e#563#564#0" expanded="true" />
-            <element signature="e#910#911#0" expanded="true" />
-            <element signature="e#946#947#0" expanded="true" />
-            <element signature="e#995#996#0" expanded="true" />
-            <element signature="e#1023#1024#0" expanded="true" />
-            <element signature="e#1080#1081#0" expanded="true" />
-            <element signature="e#1116#1117#0" expanded="true" />
-            <element signature="e#1148#1149#0" expanded="true" />
-            <element signature="e#1176#1177#0" expanded="true" />
+            <element signature="e#514#515#0" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+            <element signature="e#901#902#0" expanded="true" />
+            <element signature="e#937#938#0" expanded="true" />
+            <element signature="e#986#987#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1071#1072#0" expanded="true" />
+            <element signature="e#1107#1108#0" expanded="true" />
+            <element signature="e#1139#1140#0" expanded="true" />
+            <element signature="e#1167#1168#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -668,12 +619,9 @@
           <caret line="126" column="44" lean-forward="false" selection-start-line="126" selection-start-column="44" selection-end-line="126" selection-end-column="44" />
           <folding>
             <element signature="class#ELVertex#0;class#ELGraph#0" expanded="false" />
-            <element signature="class#ELEdge#0;class#ELGraph#0" expanded="false" />
             <element signature="method#hashCode#0;class#ELEdge#0;class#ELGraph#0" expanded="false" />
-            <element signature="method#equals#0;class#ELEdge#0;class#ELGraph#0" expanded="false" />
             <element signature="method#ELEdge#0;class#ELEdge#0;class#ELGraph#0" expanded="false" />
             <element signature="method#toString#0;class#ELEdge#0;class#ELGraph#0" expanded="false" />
-            <element signature="method#incidentEdges#0;class#ELGraph#0" expanded="false" />
             <element signature="method#opposite#0;class#ELGraph#0" expanded="false" />
             <element signature="method#endVertices#0;class#ELGraph#0" expanded="false" />
             <element signature="method#areAdjacent#0;class#ELGraph#0" expanded="false" />
@@ -682,7 +630,6 @@
             <element signature="method#insertVertex#0;class#ELGraph#0" expanded="false" />
             <element signature="e#5877#5878#0" expanded="true" />
             <element signature="e#5910#5911#0" expanded="true" />
-            <element signature="method#insertEdge#0;class#ELGraph#0" expanded="false" />
             <element signature="method#removeVertex#0;class#ELGraph#0" expanded="false" />
             <element signature="method#removeEdge#0;class#ELGraph#0" expanded="false" />
             <element signature="method#checkEdge#0;class#ELGraph#0" expanded="false" />
@@ -707,13 +654,17 @@
             <element signature="imports" expanded="true" />
             <element signature="method#bfs#0;class#Methods#0" expanded="false" />
             <element signature="method#bfs#1;class#Methods#0" expanded="false" />
+            <element signature="method#readGraph#0;class#Methods#0" expanded="false" />
             <element signature="method#getRandomVertex#0;class#Methods#0" expanded="false" />
             <element signature="method#getRandomVertex#1;class#Methods#0" expanded="false" />
+            <element signature="method#closeness#0;class#Methods#0" expanded="false" />
             <element signature="method#betweeness#0;class#Methods#0" expanded="false" />
+            <element signature="method#pageRank#0;class#Methods#0" expanded="false" />
             <element signature="method#getIndex#0;class#Methods#0" expanded="false" />
             <element signature="method#getMore#0;class#Methods#0" expanded="false" />
             <element signature="method#getListCandidates#0;class#Methods#0" expanded="false" />
             <element signature="method#checkAlpha#0;class#Methods#0" expanded="false" />
+            <element signature="method#getNumber#0;class#Methods#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -732,16 +683,16 @@
         <state relative-caret-position="0">
           <caret line="0" column="23" lean-forward="false" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
           <folding>
-            <element signature="e#522#523#0" expanded="true" />
-            <element signature="e#563#564#0" expanded="true" />
-            <element signature="e#910#911#0" expanded="true" />
-            <element signature="e#946#947#0" expanded="true" />
-            <element signature="e#995#996#0" expanded="true" />
-            <element signature="e#1023#1024#0" expanded="true" />
-            <element signature="e#1080#1081#0" expanded="true" />
-            <element signature="e#1116#1117#0" expanded="true" />
-            <element signature="e#1148#1149#0" expanded="true" />
-            <element signature="e#1176#1177#0" expanded="true" />
+            <element signature="e#514#515#0" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+            <element signature="e#901#902#0" expanded="true" />
+            <element signature="e#937#938#0" expanded="true" />
+            <element signature="e#986#987#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1071#1072#0" expanded="true" />
+            <element signature="e#1107#1108#0" expanded="true" />
+            <element signature="e#1139#1140#0" expanded="true" />
+            <element signature="e#1167#1168#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -752,12 +703,9 @@
           <caret line="128" column="18" lean-forward="true" selection-start-line="128" selection-start-column="18" selection-end-line="128" selection-end-column="18" />
           <folding>
             <element signature="class#ELVertex#0;class#ELGraph#0" expanded="false" />
-            <element signature="class#ELEdge#0;class#ELGraph#0" expanded="false" />
             <element signature="method#hashCode#0;class#ELEdge#0;class#ELGraph#0" expanded="false" />
-            <element signature="method#equals#0;class#ELEdge#0;class#ELGraph#0" expanded="false" />
             <element signature="method#ELEdge#0;class#ELEdge#0;class#ELGraph#0" expanded="false" />
             <element signature="method#toString#0;class#ELEdge#0;class#ELGraph#0" expanded="false" />
-            <element signature="method#incidentEdges#0;class#ELGraph#0" expanded="false" />
             <element signature="method#opposite#0;class#ELGraph#0" expanded="false" />
             <element signature="method#endVertices#0;class#ELGraph#0" expanded="false" />
             <element signature="method#areAdjacent#0;class#ELGraph#0" expanded="false" />
@@ -766,7 +714,6 @@
             <element signature="method#insertVertex#0;class#ELGraph#0" expanded="false" />
             <element signature="e#5877#5878#0" expanded="true" />
             <element signature="e#5910#5911#0" expanded="true" />
-            <element signature="method#insertEdge#0;class#ELGraph#0" expanded="false" />
             <element signature="method#removeVertex#0;class#ELGraph#0" expanded="false" />
             <element signature="method#removeEdge#0;class#ELGraph#0" expanded="false" />
             <element signature="method#checkEdge#0;class#ELGraph#0" expanded="false" />
@@ -797,16 +744,16 @@
         <state relative-caret-position="0">
           <caret line="0" column="23" lean-forward="false" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
           <folding>
-            <element signature="e#522#523#0" expanded="true" />
-            <element signature="e#563#564#0" expanded="true" />
-            <element signature="e#910#911#0" expanded="true" />
-            <element signature="e#946#947#0" expanded="true" />
-            <element signature="e#995#996#0" expanded="true" />
-            <element signature="e#1023#1024#0" expanded="true" />
-            <element signature="e#1080#1081#0" expanded="true" />
-            <element signature="e#1116#1117#0" expanded="true" />
-            <element signature="e#1148#1149#0" expanded="true" />
-            <element signature="e#1176#1177#0" expanded="true" />
+            <element signature="e#514#515#0" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+            <element signature="e#901#902#0" expanded="true" />
+            <element signature="e#937#938#0" expanded="true" />
+            <element signature="e#986#987#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1071#1072#0" expanded="true" />
+            <element signature="e#1107#1108#0" expanded="true" />
+            <element signature="e#1139#1140#0" expanded="true" />
+            <element signature="e#1167#1168#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -819,13 +766,17 @@
             <element signature="imports" expanded="true" />
             <element signature="method#bfs#0;class#Methods#0" expanded="false" />
             <element signature="method#bfs#1;class#Methods#0" expanded="false" />
+            <element signature="method#readGraph#0;class#Methods#0" expanded="false" />
             <element signature="method#getRandomVertex#0;class#Methods#0" expanded="false" />
             <element signature="method#getRandomVertex#1;class#Methods#0" expanded="false" />
+            <element signature="method#closeness#0;class#Methods#0" expanded="false" />
             <element signature="method#betweeness#0;class#Methods#0" expanded="false" />
+            <element signature="method#pageRank#0;class#Methods#0" expanded="false" />
             <element signature="method#getIndex#0;class#Methods#0" expanded="false" />
             <element signature="method#getMore#0;class#Methods#0" expanded="false" />
             <element signature="method#getListCandidates#0;class#Methods#0" expanded="false" />
             <element signature="method#checkAlpha#0;class#Methods#0" expanded="false" />
+            <element signature="method#getNumber#0;class#Methods#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -843,16 +794,16 @@
         <state relative-caret-position="0">
           <caret line="0" column="23" lean-forward="true" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
           <folding>
-            <element signature="e#522#523#0" expanded="true" />
-            <element signature="e#563#564#0" expanded="true" />
-            <element signature="e#910#911#0" expanded="true" />
-            <element signature="e#946#947#0" expanded="true" />
-            <element signature="e#995#996#0" expanded="true" />
-            <element signature="e#1023#1024#0" expanded="true" />
-            <element signature="e#1080#1081#0" expanded="true" />
-            <element signature="e#1116#1117#0" expanded="true" />
-            <element signature="e#1148#1149#0" expanded="true" />
-            <element signature="e#1176#1177#0" expanded="true" />
+            <element signature="e#514#515#0" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+            <element signature="e#901#902#0" expanded="true" />
+            <element signature="e#937#938#0" expanded="true" />
+            <element signature="e#986#987#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1071#1072#0" expanded="true" />
+            <element signature="e#1107#1108#0" expanded="true" />
+            <element signature="e#1139#1140#0" expanded="true" />
+            <element signature="e#1167#1168#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -865,13 +816,17 @@
             <element signature="imports" expanded="true" />
             <element signature="method#bfs#0;class#Methods#0" expanded="false" />
             <element signature="method#bfs#1;class#Methods#0" expanded="false" />
+            <element signature="method#readGraph#0;class#Methods#0" expanded="false" />
             <element signature="method#getRandomVertex#0;class#Methods#0" expanded="false" />
             <element signature="method#getRandomVertex#1;class#Methods#0" expanded="false" />
+            <element signature="method#closeness#0;class#Methods#0" expanded="false" />
             <element signature="method#betweeness#0;class#Methods#0" expanded="false" />
+            <element signature="method#pageRank#0;class#Methods#0" expanded="false" />
             <element signature="method#getIndex#0;class#Methods#0" expanded="false" />
             <element signature="method#getMore#0;class#Methods#0" expanded="false" />
             <element signature="method#getListCandidates#0;class#Methods#0" expanded="false" />
             <element signature="method#checkAlpha#0;class#Methods#0" expanded="false" />
+            <element signature="method#getNumber#0;class#Methods#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -888,16 +843,16 @@
         <state relative-caret-position="36">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <element signature="e#522#523#0" expanded="true" />
-            <element signature="e#563#564#0" expanded="true" />
-            <element signature="e#910#911#0" expanded="true" />
-            <element signature="e#946#947#0" expanded="true" />
-            <element signature="e#995#996#0" expanded="true" />
-            <element signature="e#1023#1024#0" expanded="true" />
-            <element signature="e#1080#1081#0" expanded="true" />
-            <element signature="e#1116#1117#0" expanded="true" />
-            <element signature="e#1148#1149#0" expanded="true" />
-            <element signature="e#1176#1177#0" expanded="true" />
+            <element signature="e#514#515#0" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+            <element signature="e#901#902#0" expanded="true" />
+            <element signature="e#937#938#0" expanded="true" />
+            <element signature="e#986#987#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1071#1072#0" expanded="true" />
+            <element signature="e#1107#1108#0" expanded="true" />
+            <element signature="e#1139#1140#0" expanded="true" />
+            <element signature="e#1167#1168#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -918,13 +873,17 @@
             <element signature="imports" expanded="true" />
             <element signature="method#bfs#0;class#Methods#0" expanded="false" />
             <element signature="method#bfs#1;class#Methods#0" expanded="false" />
+            <element signature="method#readGraph#0;class#Methods#0" expanded="false" />
             <element signature="method#getRandomVertex#0;class#Methods#0" expanded="false" />
             <element signature="method#getRandomVertex#1;class#Methods#0" expanded="false" />
+            <element signature="method#closeness#0;class#Methods#0" expanded="false" />
             <element signature="method#betweeness#0;class#Methods#0" expanded="false" />
+            <element signature="method#pageRank#0;class#Methods#0" expanded="false" />
             <element signature="method#getIndex#0;class#Methods#0" expanded="false" />
             <element signature="method#getMore#0;class#Methods#0" expanded="false" />
             <element signature="method#getListCandidates#0;class#Methods#0" expanded="false" />
             <element signature="method#checkAlpha#0;class#Methods#0" expanded="false" />
+            <element signature="method#getNumber#0;class#Methods#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -934,16 +893,16 @@
         <state relative-caret-position="36">
           <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <element signature="e#522#523#0" expanded="true" />
-            <element signature="e#563#564#0" expanded="true" />
-            <element signature="e#910#911#0" expanded="true" />
-            <element signature="e#946#947#0" expanded="true" />
-            <element signature="e#995#996#0" expanded="true" />
-            <element signature="e#1023#1024#0" expanded="true" />
-            <element signature="e#1080#1081#0" expanded="true" />
-            <element signature="e#1116#1117#0" expanded="true" />
-            <element signature="e#1148#1149#0" expanded="true" />
-            <element signature="e#1176#1177#0" expanded="true" />
+            <element signature="e#514#515#0" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+            <element signature="e#901#902#0" expanded="true" />
+            <element signature="e#937#938#0" expanded="true" />
+            <element signature="e#986#987#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1071#1072#0" expanded="true" />
+            <element signature="e#1107#1108#0" expanded="true" />
+            <element signature="e#1139#1140#0" expanded="true" />
+            <element signature="e#1167#1168#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -979,27 +938,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/erdos_renyi_small/0-graph1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="3" lean-forward="false" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Edge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Vertex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="17" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/erdos_renyi_small/erdos_renyi_100_0.05_0.2_0.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1018,22 +956,50 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="79">
           <caret line="191" column="0" lean-forward="false" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erdos_renyi_small/0-graph1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="3" lean-forward="false" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Edge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Vertex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="17" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="27" column="34" lean-forward="false" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ELGraph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="267" column="0" lean-forward="true" selection-start-line="267" selection-start-column="0" selection-end-line="267" selection-end-column="0" />
+        <state relative-caret-position="159">
+          <caret line="287" column="24" lean-forward="false" selection-start-line="287" selection-start-column="24" selection-end-line="287" selection-end-column="24" />
           <folding>
             <element signature="class#ELVertex#0;class#ELGraph#0" expanded="false" />
-            <element signature="class#ELEdge#0;class#ELGraph#0" expanded="false" />
             <element signature="method#hashCode#0;class#ELEdge#0;class#ELGraph#0" expanded="false" />
-            <element signature="method#equals#0;class#ELEdge#0;class#ELGraph#0" expanded="false" />
             <element signature="method#ELEdge#0;class#ELEdge#0;class#ELGraph#0" expanded="false" />
             <element signature="method#toString#0;class#ELEdge#0;class#ELGraph#0" expanded="false" />
-            <element signature="method#incidentEdges#0;class#ELGraph#0" expanded="false" />
             <element signature="method#opposite#0;class#ELGraph#0" expanded="false" />
             <element signature="method#endVertices#0;class#ELGraph#0" expanded="false" />
             <element signature="method#areAdjacent#0;class#ELGraph#0" expanded="false" />
@@ -1042,7 +1008,6 @@
             <element signature="method#insertVertex#0;class#ELGraph#0" expanded="false" />
             <element signature="e#5877#5878#0" expanded="true" />
             <element signature="e#5910#5911#0" expanded="true" />
-            <element signature="method#insertEdge#0;class#ELGraph#0" expanded="false" />
             <element signature="method#removeVertex#0;class#ELGraph#0" expanded="false" />
             <element signature="method#removeEdge#0;class#ELGraph#0" expanded="false" />
             <element signature="method#checkEdge#0;class#ELGraph#0" expanded="false" />
@@ -1054,46 +1019,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Solution.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-21">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="565">
+          <caret line="49" column="34" lean-forward="false" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
           <folding>
-            <element signature="e#522#523#0" expanded="true" />
-            <element signature="e#563#564#0" expanded="true" />
-            <element signature="e#910#911#0" expanded="true" />
-            <element signature="e#946#947#0" expanded="true" />
-            <element signature="e#995#996#0" expanded="true" />
-            <element signature="e#1023#1024#0" expanded="true" />
-            <element signature="e#1080#1081#0" expanded="true" />
-            <element signature="e#1116#1117#0" expanded="true" />
-            <element signature="e#1148#1149#0" expanded="true" />
-            <element signature="e#1176#1177#0" expanded="true" />
+            <element signature="e#514#515#0" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+            <element signature="e#901#902#0" expanded="true" />
+            <element signature="e#937#938#0" expanded="true" />
+            <element signature="e#986#987#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1071#1072#0" expanded="true" />
+            <element signature="e#1107#1108#0" expanded="true" />
+            <element signature="e#1139#1140#0" expanded="true" />
+            <element signature="e#1167#1168#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Graph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="34" lean-forward="true" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Methods.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="316" column="15" lean-forward="true" selection-start-line="316" selection-start-column="15" selection-end-line="316" selection-end-column="15" />
+        <state relative-caret-position="33">
+          <caret line="290" column="29" lean-forward="true" selection-start-line="290" selection-start-column="29" selection-end-line="290" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#bfs#0;class#Methods#0" expanded="false" />
             <element signature="method#bfs#1;class#Methods#0" expanded="false" />
+            <element signature="method#readGraph#0;class#Methods#0" expanded="false" />
             <element signature="method#getRandomVertex#0;class#Methods#0" expanded="false" />
             <element signature="method#getRandomVertex#1;class#Methods#0" expanded="false" />
+            <element signature="method#closeness#0;class#Methods#0" expanded="false" />
             <element signature="method#betweeness#0;class#Methods#0" expanded="false" />
+            <element signature="method#pageRank#0;class#Methods#0" expanded="false" />
             <element signature="method#getIndex#0;class#Methods#0" expanded="false" />
             <element signature="method#getMore#0;class#Methods#0" expanded="false" />
             <element signature="method#getListCandidates#0;class#Methods#0" expanded="false" />
             <element signature="method#checkAlpha#0;class#Methods#0" expanded="false" />
+            <element signature="method#getNumber#0;class#Methods#0" expanded="false" />
           </folding>
         </state>
       </provider>
