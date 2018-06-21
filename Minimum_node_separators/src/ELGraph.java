@@ -2,7 +2,7 @@ import java.util.*;
 
 public class ELGraph<V,E> implements Graph <V,E> {
 	
-	private class ELVertex <T> implements Vertex <T> {
+	class ELVertex <T> implements Vertex <T> {
 	    private T vertexValue;
 	    private final Graph<T,E> graph;
 	    private int edges;
@@ -37,7 +37,7 @@ public class ELGraph<V,E> implements Graph <V,E> {
         }
 	}
 	
-	private class ELEdge <T> implements Edge <T> {
+	class ELEdge <T> implements Edge <T> {
 	    private T edgeValue;
 	    private final Graph<V, T> graph;
 	    
@@ -122,8 +122,8 @@ public class ELGraph<V,E> implements Graph <V,E> {
 	    }
 	}
 
-    private final Set <ELVertex<V>> vertexList = new HashSet<>();
-    private final Set <ELEdge<E>> edgeList = new HashSet<>();
+    private Set <ELVertex<V>> vertexList = new HashSet<>();
+    private Set <ELEdge<E>> edgeList = new HashSet<>();
     private int size = 0;
     
     public Iterable <? extends Vertex<V> > vertices() {
@@ -293,5 +293,18 @@ public class ELGraph<V,E> implements Graph <V,E> {
             edgeList.remove(e);
         edgeList.add(e);
         return e;
+    }
+
+    public Set<ELEdge<E>> getEdgeList() {
+        return edgeList;
+    }
+
+    public ELGraph(Set<ELVertex<V>> vertexList, Set<ELEdge<E>> edgeList) {
+        this.vertexList = vertexList;
+        this.edgeList = edgeList;
+        this.size = vertexList.size();
+    }
+
+    public ELGraph() {
     }
 }

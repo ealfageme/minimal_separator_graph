@@ -55,7 +55,20 @@ public class Methods {
         list.clear();
         return list;
     }
-
+    private static float readAlpha(String filePath)throws IOException{
+        File file = new File(filePath);
+        FileReader fr = null;
+        try {
+            fr = new FileReader(file);
+        } catch (FileNotFoundException e1) {
+            e1.printStackTrace();
+        }
+        assert fr != null;
+        BufferedReader br = new BufferedReader(fr);
+        String heads = br.readLine();
+        String head[] = heads.split(" ");
+        return Float.parseFloat(head[2]);
+    }
     private static ELGraph<String, String> readGraph(String filePath) throws IOException {
         ELGraph<String, String> graph = new ELGraph<>();
         File file = new File(filePath);
@@ -65,6 +78,7 @@ public class Methods {
         } catch (FileNotFoundException e1) {
             e1.printStackTrace();
         }
+        assert fr != null;
         BufferedReader br = new BufferedReader(fr);
         String line;
         String heads = br.readLine();
@@ -367,13 +381,14 @@ public class Methods {
 
     public static void main(String[] args) throws IOException {
         long startTime = System.currentTimeMillis();
-        double alpha = 0.2;
         String graph1 = "erdos_renyi_small/erdos_renyi_100_0.05_0.2_0.txt";
 //          String graph1 = "erdos_renyi_small/grafo.txt";
 //        String graph1 = "erdos_renyi_small/0-graph1";
         ELGraph<String, String> originalGraph = readGraph(graph1);
         ELGraph<String, String> graph = readGraph(graph1);
         System.out.println("deleting vertex");
+        float alpha = readAlpha(graph1);
+        System.out.println(alpha);
         int n = graph.getSize();
         double param = alpha * n;
         Solution solution = new Solution(originalGraph, graph, param);
@@ -400,6 +415,8 @@ public class Methods {
         solution = improve(solution);
         System.out.println("SOLUTION"+"\n");
         System.out.println(solution.toString());
+
+
         long endTime = System.currentTimeMillis() - startTime;
         System.out.println("Time: "+endTime/1000 + " seconds");
 
